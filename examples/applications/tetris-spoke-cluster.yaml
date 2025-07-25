@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tetris-spoke-cluster
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ganeshsnp987/Tetris-manifest.git
+    targetRevision: HEAD
+    path: .
+  destination:
+    server: https://172.20.0.5:6443  # Replace with your spoke cluster IP
+    namespace: tetris
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

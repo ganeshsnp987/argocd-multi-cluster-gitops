@@ -1,0 +1,38 @@
+# Kubernetes
+*.kubeconfig
+kubeconfig*
+.kube/
+
+# ArgoCD
+argocd-*-backup.yaml
+*.backup
+
+# Secrets and sensitive files
+*secret*
+*token*
+*.key
+*.pem
+*.crt
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Kind cluster configs (if you want to keep them private)
+# *-cluster-config.yaml
+
+# Helm
+charts/
+*.tgz
+
+# Terraform (if used)
+*.tfstate
+*.tfstate.backup
+.terraform/
